@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scim-sentry"
+version = "0.1.0"
+description = "SCIM directory drift checker for Okta/Entra-style identity sources"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+scim-sentry = "scim_sentry.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
