@@ -1,0 +1,13 @@
+{
+  "users": [
+    {"id":"okta-u1","status":"ACTIVE","profile":{"login":"alice@example.com","email":"alice@example.com","displayName":"Alice Chen"}},
+    {"id":"okta-u2","status":"DEPROVISIONED","profile":{"login":"bob@example.com","email":"bob@example.com","displayName":"Bob Singh"}},
+    {"id":"okta-u3","status":"ACTIVE","profile":{"login":"carol@example.com","email":"carol@example.com","displayName":"Carol Diaz"}},
+    {"id":"okta-u4","status":"ACTIVE","profile":{"login":"dupe@example.com","email":"dupe@example.com","displayName":"Duplicate One"}},
+    {"id":"okta-u5","status":"ACTIVE","profile":{"login":"dupe@example.com","email":"dupe@example.com","displayName":"Duplicate Two"}}
+  ],
+  "groups": [
+    {"id":"okta-g1","profile":{"name":"Engineering"},"members":["okta-u1","okta-u2","okta-u3"]},
+    {"id":"okta-g2","profile":{"name":"Finance"},"members":["okta-u1"]}
+  ]
+}

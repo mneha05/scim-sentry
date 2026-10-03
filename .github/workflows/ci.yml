@@ -1,0 +1,29 @@
+name: SCIM directory drift verification
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -e . pytest
+      - run: pytest -q
+      - run: scim-sentry demo --provider okta --out reports
+      - run: scim-sentry demo --provider entra --out reports
+      - name: Verify SCIM remediation output
+        run: |
+          python - <<'PY'
+          import json
+          for provider in ("okta", "entra"):
+              report = json.load(open(f"reports/{provider}-report.json"))
+              assert report["count"] >= 5
+              assert any(f["fix"].get("method") == "PATCH" for f in report["findings"])
+          print("SCIM drift reports verified")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scim-drift-reports
+          path: reports/

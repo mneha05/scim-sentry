@@ -1,0 +1,11 @@
+{
+  "users": [
+    {"id":"entra-u1","userPrincipalName":"alice@example.com","mail":"alice@example.com","displayName":"Alice Chen","accountEnabled":true},
+    {"id":"entra-u2","userPrincipalName":"bob@example.com","mail":"bob@example.com","displayName":"Bob Singh","accountEnabled":false},
+    {"id":"entra-u3","userPrincipalName":"carol@example.com","mail":"carol@example.com","displayName":"Carol Diaz","accountEnabled":true}
+  ],
+  "groups": [
+    {"id":"entra-g1","displayName":"Engineering","members":["entra-u1","entra-u2","entra-u3"]},
+    {"id":"entra-g2","displayName":"Finance","members":["entra-u1"]}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "Users": [
+    {"id":"dir-u1","externalId":"source-u1","userName":"alice@example.com","displayName":"Alice Chen","active":true,"emails":[{"value":"alice@example.com","type":"work","primary":true}]},
+    {"id":"dir-u2","externalId":"source-u2","userName":"bob@example.com","displayName":"Bob Singh","active":true,"emails":[{"value":"bob@example.com","type":"work","primary":true}]},
+    {"id":"dir-u3","externalId":"source-u3","userName":"carol@example.com","displayName":"Carol Diaz","active":true,"emails":[{"value":"carol@example.com","type":"work","primary":true}]},
+    {"id":"dir-u4","externalId":"legacy-4","userName":"legacy@example.com","displayName":"Legacy User","active":true,"emails":[{"value":"legacy@example.com","type":"work","primary":true}]},
+    {"id":"dir-u5","userName":"dupe-target@example.com","displayName":"Target Duplicate 1","active":true,"emails":[{"value":"dupetarget@example.com","type":"work","primary":true}]},
+    {"id":"dir-u6","userName":"dupe-target-2@example.com","displayName":"Target Duplicate 2","active":true,"emails":[{"value":"dupetarget@example.com","type":"work","primary":true}]}
+  ],
+  "Groups": [
+    {"id":"dir-g1","displayName":"Engineering","members":[{"value":"dir-u1"},{"value":"dir-u2"},{"value":"dir-u4"},{"value":"missing-user-id"}]},
+    {"id":"dir-g2","displayName":"Finance","members":[{"value":"dir-u1"}]}
+  ]
+}
