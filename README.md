@@ -1,5 +1,7 @@
 # SCIM Sentry
 
+[![SCIM directory drift verification](https://github.com/mneha05/scim-sentry/actions/workflows/ci.yml/badge.svg)](https://github.com/mneha05/scim-sentry/actions/workflows/ci.yml)
+
 **Directory drift checker for SCIM 2.0, Okta-style, and Microsoft Entra-style identity data.**
 
 SCIM Sentry compares an identity provider's users/groups with a target SCIM directory and flags lifecycle or membership drift with concrete remediation guidance.
@@ -28,6 +30,30 @@ Each actionable finding includes a suggested SCIM remediation. Example:
   }
 }
 ```
+
+## Verified CI run
+
+GitHub Actions run [#37081535492](https://github.com/mneha05/scim-sentry/actions/runs/37081535492) passed end-to-end:
+
+```text
+4 tests passed
+
+Okta demo
+  findings=8
+  critical=2
+  high=5
+  medium=1
+
+Entra demo
+  findings=7
+  critical=2
+  high=4
+  medium=1
+
+SCIM drift reports verified
+```
+
+The workflow also uploads the generated Okta/Entra JSON + HTML drift reports as the `scim-drift-reports` artifact and asserts that remediation output contains executable SCIM `PATCH` operations.
 
 ## Provider adapters
 
